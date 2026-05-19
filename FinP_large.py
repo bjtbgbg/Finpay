@@ -18,14 +18,7 @@ completion = client.chat.completions.create(
             "role": "user",
             "content": question
         }
-    ],
-    temperature=0.7,
-    top_p=0.95,
-    extra_body={
-        "top_k": 50,
-        "repetition_penalty": 1.0,
-        "enable_thinking": True,
-    },
+    ]
 )
 
 response = json.loads(completion.model_dump_json())
