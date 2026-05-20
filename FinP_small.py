@@ -20,12 +20,7 @@ completion = client.chat.completions.create(
         }
     ],
     temperature=0.8,
-    top_p=0.95,
-    extra_body={
-        "top_k": 50,
-        "min_p": 0.0,
-    },
+    top_p=0.95
 )
 
-response = json.loads(completion.model_dump_json())
-print(response['choices'][0]['message']['content'])
+print(completion.choices[0].message.content)
