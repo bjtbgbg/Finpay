@@ -19,9 +19,7 @@ completion = client.chat.completions.create(
     presence_penalty=1.5,
     extra_body={
         "top_k": 20,
-        "chat_template_kwargs": {
-            "enable_thinking": False
-        }
+        "enable_thinking": False
     }
 )
 response = json.loads(completion.model_dump_json())
