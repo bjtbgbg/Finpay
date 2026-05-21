@@ -11,6 +11,18 @@ client = OpenAI(
     base_url=base_url,
 )
 
-completion = client.chat.completions.create(model=path, messages=[{'role': 'user', 'content': question}])
+completion = client.chat.completions.create(
+    model=path, 
+    messages=[{'role': 'user', 'content': question}],
+    temperature=0.7,
+    top_p=0.8,
+    presence_penalty=1.5,
+    extra_body={
+        "top_k": 20,
+        "chat_template_kwargs": {
+            "enable_thinking": False
+        }
+    }
+)
 response = json.loads(completion.model_dump_json())
 print(response['choices'][0]['message']['content'])
