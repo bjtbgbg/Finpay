@@ -20,7 +20,10 @@ completion = client.chat.completions.create(
         }
     ],
     temperature=0.8,
-    top_p=0.95
+    top_p=0.95,
+    extra_body={
+        "chat_template_kwargs": {"enable_thinking": False}
+    }
 )
 
 print(completion.choices[0].message.content)
