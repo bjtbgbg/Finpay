@@ -18,8 +18,7 @@ completion = client.chat.completions.create(
     top_p=0.8,
     presence_penalty=1.5,
     extra_body={
-        "top_k": 20,
-        "enable_thinking": False
+        "top_k": 20
     }
 )
 response = json.loads(completion.model_dump_json())
