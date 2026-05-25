@@ -14,6 +14,7 @@ client = OpenAI(
 completion = client.chat.completions.create(
     model=path, 
     messages=[{'role': 'user', 'content': question}],
+    max_tokens=32768,
     temperature=0.7,
     top_p=0.8,
     presence_penalty=1.5,
