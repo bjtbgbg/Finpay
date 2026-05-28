@@ -1,7 +1,7 @@
 import json
 from openai import OpenAI
 
-api_key = "sk-PxmH6rEuPZtDqZfOjdCOMXz1uvWigluaqwWHHiLHcxscbdvJ"
+api_key = "xxxxxx"
 base_url = "http://35.220.164.252:3888/v1/"
 path = "qwen3.5-397b-a17b"
 question = "你好"
